@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizai/presentation/onboarding/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,18 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Quizai',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const OnboardingScreen(),
     );
-  }
-}
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
