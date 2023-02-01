@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quizai/presentation/onboarding/onboarding_screen.dart';
+import 'package:quizai/presentation/onboarding/pages/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
