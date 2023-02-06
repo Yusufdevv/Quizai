@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quizai/presentation/login/pages/forgot_password_screen.dart';
+import 'package:quizai/presentation/login/pages/login_screen.dart';
+import 'package:quizai/presentation/login/pages/register_screen.dart';
 import 'package:quizai/presentation/onboarding/pages/onboarding_screen.dart';
 
 void main() {
@@ -17,6 +20,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const OnboardingScreen(),
+      routes: {
+        LoginScreen.routeName: (context) =>   LoginScreen(),
+        RegisterScreen.routeName: (context) =>   RegisterScreen(),
+        ForgotPasswordScreen.routeName:(context) =>   ForgotPasswordScreen(),
+      },
     );
   }
 }

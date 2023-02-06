@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quizai/assets/colors.dart';
 import 'package:quizai/presentation/login/pages/login_screen.dart';
+import 'package:quizai/presentation/login/pages/register_screen.dart';
 import 'package:quizai/presentation/onboarding/widgets/onboarding_background.dart';
 import 'package:quizai/presentation/onboarding/widgets/pageview_item.dart';
 
@@ -22,9 +24,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
   int currentItem = 0;
 
-  Color mainColor = const Color(0xFF354CE0);
-
-  String image = 'assets/red_book.PNG';
+  String image = 'assets/images/red_book.PNG';
   String title = 'Create your own game';
   String subTitle =
       'Create your own game game your,\ncreate your own game take\ncreate your own book\ncreate your lake';
@@ -71,7 +71,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                               decoration: BoxDecoration(
                                   color: currentItem == index
                                       ? mainColor
-                                      : const Color(0xFFCDD9F9),
+                                      : lavender,
                                   borderRadius: BorderRadius.circular(4)),
                             )),
                   ),
@@ -80,11 +80,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const LoginScreen(),
-                            )),
+                        onTap: () => Navigator.pushReplacementNamed(
+                            context, RegisterScreen.routeName),
                         child: Text(
                           'Skip',
                           style: TextStyle(
@@ -112,11 +109,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                       else
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const LoginScreen(),
-                                ));
+                            Navigator.pushReplacementNamed(
+                                context, RegisterScreen.routeName);
                           },
                           child: Container(
                             height: 55,
